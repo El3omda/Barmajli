@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SignController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layout.app');
 });
+
+// Signs
+
+#Login
+Route::get('/login', [SignController::class, 'login']);
+
+#Register
+Route::get('/register', [SignController::class, 'register']);

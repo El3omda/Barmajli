@@ -20,11 +20,12 @@
         left: 0;
     }
 
+
 </style>
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="/">
+        <a class="navbar-brand fw-bold text-primary" href="/">
             Barmajli
         </a>
 
@@ -49,6 +50,7 @@
                 </li>
             </ul>
 
+            {{-- Search Form --}}
             <form class="d-flex input-group w-auto">
                 <input type="search" class="form-control shadow-none" placeholder="Word To Search . . ." aria-label="Search" />
                 <button class="btn btn-outline-primary shadow-none" type="button" data-mdb-ripple-color="dark"
@@ -58,11 +60,11 @@
             </form>
 
             <ul class="navbar-nav mb-2 mb-lg-0">
-
+                {{-- Notification --}}
                 <li class="nav-item dropdown">
                     <a class="btn dropdown noti-rel shadow-none" role="button" type="button" href="#" id="notidrop" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-solid fa-bell fa-lg"></i>
+                        <i class="fa fa-solid fa-bell fa-lg text-primary"></i>
                     </a>
                     <div class="dropdown-menu pull-left" aria-labelledby="notidrop">
 
@@ -70,6 +72,7 @@
                     </div>
                 </li>
 
+                {{-- User --}}
                 <li class="nav-item dropdown float-end">
                     <a class="btn dropdown noti-rel shadow-none" role="button" type="button" href="#" id="userdrop" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
