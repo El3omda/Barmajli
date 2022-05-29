@@ -14,7 +14,7 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-8">
                             <h2 class="text-center fw-bold mb-5 text-uppercase">Login</h2>
-                            <form action="" method="POST">
+                            <form action="/login/enter" method="POST">
                                 @csrf
 
                                 {{-- Email --}}
@@ -22,21 +22,27 @@
                                     <label class="form-label" for="email">Email address</label>
                                     <input type="email" id="email" name="email" value="{{ old('email') }}"
                                         class="form-control" />
+                                    @error('email')
+                                        <small class="fw-bold text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 {{-- Password --}}
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="password">Password</label>
                                     <input type="password" id="password" name="password" class="form-control" />
+                                    @error('password')
+                                        <small class="fw-bold text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 {{-- Remmeber Me --}}
                                 <div class="col-md-6">
                                     <div class="form-check mb-4">
-                                        <input class="form-check-input me-2" type="checkbox" name="remamber"
-                                            id="remamber" />
-                                        <label class="form-check-label" for="remamber">
-                                            Remamber Me
+                                        <input class="form-check-input me-2" type="checkbox" name="remember"
+                                            id="remember" />
+                                        <label class="form-check-label" for="remember">
+                                            Remember Me
                                         </label>
                                     </div>
                                 </div>

@@ -14,7 +14,7 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-8">
                             <h2 class="text-center fw-bold mb-5 text-uppercase">Register</h2>
-                            <form action="" method="POST">
+                            <form action="/register/store" method="POST">
                                 @csrf
 
                                 {{-- Name --}}
@@ -24,6 +24,9 @@
                                             <label class="form-label" for="first_name">First name</label>
                                             <input type="text" id="first_name" name="first_name"
                                                 value="{{ old('first_name') }}" class="form-control" />
+                                            @error('first_name')
+                                                <small class="fw-bold text-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
@@ -31,6 +34,9 @@
                                             <label class="form-label" for="last_name">Last name</label>
                                             <input type="text" id="last_name" name="last_name"
                                                 value="{{ old('last_name') }}" class="form-control" />
+                                            @error('last_name')
+                                                <small class="fw-bold text-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -40,6 +46,9 @@
                                     <label class="form-label" for="email">Email address</label>
                                     <input type="email" id="email" name="email" value="{{ old('email') }}"
                                         class="form-control" />
+                                        @error('email')
+                                            <small class="fw-bold text-danger">{{ $message }}</small>
+                                        @enderror
                                 </div>
 
                                 {{-- Gender --}}
@@ -63,12 +72,18 @@
                                             </label>
                                         </div>
                                     </div>
+                                    @error('gender')
+                                        <small class="fw-bold text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 {{-- Password --}}
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="password">Password</label>
                                     <input type="password" id="password" name="password" class="form-control" />
+                                    @error('password')
+                                        <small class="fw-bold text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
 
                                 {{-- Register Button --}}

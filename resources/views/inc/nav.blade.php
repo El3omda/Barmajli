@@ -59,37 +59,49 @@
                 </button>
             </form>
 
-            <ul class="navbar-nav mb-2 mb-lg-0">
-                {{-- Notification --}}
-                <li class="nav-item dropdown">
-                    <a class="btn dropdown noti-rel shadow-none" role="button" type="button" href="#" id="notidrop" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-solid fa-bell fa-lg text-primary"></i>
-                    </a>
-                    <div class="dropdown-menu pull-left" aria-labelledby="notidrop">
+            {{-- Check If Auth --}}
+            @auth
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    {{-- Notification --}}
+                    <li class="nav-item dropdown">
+                        <a class="btn dropdown noti-rel shadow-none" role="button" type="button" href="#" id="notidrop" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-solid fa-bell fa-lg text-primary"></i>
+                        </a>
+                        <div class="dropdown-menu pull-left" aria-labelledby="notidrop">
 
-                        <a class="dropdown-item">Notification</a>
-                    </div>
-                </li>
+                            <a class="dropdown-item">Notification</a>
+                        </div>
+                    </li>
 
-                {{-- User --}}
-                <li class="nav-item dropdown float-end">
-                    <a class="btn dropdown noti-rel shadow-none" role="button" type="button" href="#" id="userdrop" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?cs=srgb&dl=pexels-italo-melo-2379004.jpg&fm=jpg"
-                            class="rounded-circle" height="30" width="30" />
-                    </a>
-                    <div class="dropdown-menu pull-right" aria-labelledby="userdrop">
-                        <a class="dropdown-item" href="/profile">Profile</a>
-                        <a class="dropdown-item" href="/messages">Messages</a>
-                        <a class="dropdown-item" href="/help">Help</a>
-                        <a class="dropdown-item" href="/balance">Balance</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/logout">Logout</a>
-                    </div>
-                </li>
+                    {{-- User --}}
+                    <li class="nav-item dropdown float-end">
+                        <a class="btn dropdown noti-rel shadow-none" role="button" type="button" href="#" id="userdrop" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?cs=srgb&dl=pexels-italo-melo-2379004.jpg&fm=jpg"
+                                class="rounded-circle" height="30" width="30" />
+                        </a>
+                        <div class="dropdown-menu pull-right" aria-labelledby="userdrop">
+                            <a class="dropdown-item" href="/profile">Profile</a>
+                            <a class="dropdown-item" href="/messages">Messages</a>
+                            <a class="dropdown-item" href="/help">Help</a>
+                            <a class="dropdown-item" href="/balance">Balance</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/logout">Logout</a>
+                        </div>
+                    </li>
 
-            </ul>
+                </ul>
+            @else
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                </ul>
+            @endauth
 
         </div>
     </div>

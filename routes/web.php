@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainPagesController;
 use App\Http\Controllers\SignController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,5 +24,19 @@ Route::get('/', function () {
 #Login
 Route::get('/login', [SignController::class, 'login']);
 
+#Enter
+Route::post('/login/enter', [SignController::class, 'enter']);
+
 #Register
 Route::get('/register', [SignController::class, 'register']);
+
+#Store
+Route::post('/register/store', [SignController::class, 'store']);
+
+#Logout
+Route::get('/logout', [SignController::class, 'logout']);
+
+// User
+
+#Dashboard
+Route::get('/dashboard', [MainPagesController::class, 'dashboard']);
